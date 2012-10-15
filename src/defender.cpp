@@ -8,5 +8,5 @@ Defender::Defender(std::string name) : Entity(name)
 
 void Defender::onNotify()
 {
-    //std::cout << this->getName() << " notified!\n";
+    std::cout << this->getName() << " notified!\n";
 }

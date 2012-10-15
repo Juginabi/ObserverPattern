@@ -11,17 +11,18 @@ int main()
 
     Attacker spider("Spider");
     Defender mortar("jokutorni");
-    Defender towers[100];
-
     spider.addObserver(&mortar);
-    for (int i = 0; i < 100; ++i)
-    {
-        stringstream st;
-        st << i;
-        towers[i].setName(st.str());
-        spider.addObserver(&towers[i]);
-    }
-    bool isAlive;
+//    Defender towers[100];
+
+//    spider.addObserver(&mortar);
+//    for (int i = 0; i < 100; ++i)
+//    {
+//        stringstream st;
+//        st << i;
+//        towers[i].setName(st.str());
+//        spider.addObserver(&towers[i]);
+//    }
+    bool isAlive = spider.isAlive();;
 
     while (isAlive)
     {

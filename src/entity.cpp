@@ -4,7 +4,7 @@
 
 Entity::Entity(std::string name) :
     isAlive_(true),
-    hitpoints_(100000),
+    hitpoints_(10),
     name_(name)
 {
 }
