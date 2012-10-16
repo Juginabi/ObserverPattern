@@ -8,8 +8,14 @@
 class Defender : public Entity, public IObserver
 {
 public:
+    /// Default constructor
     Defender() {}
+
+    /// Constructor with name parameter
     Defender(std::string name);
+
+    /// Destructor
+    ~Defender() {}
 
     /// Notifier method.
     void onNotify();

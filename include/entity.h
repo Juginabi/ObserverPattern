@@ -16,9 +16,13 @@ public:
     /// Constructor
     Entity(std::string name);
 
+    /// Virtual destructor
+    virtual ~Entity() {}
+
     /// Returns this entity name
     const std::string& getName() const;
 
+    /// Set this entity name
     void setName(std::string);
 
     /// Deal damage to this entity

@@ -9,7 +9,11 @@ class ObservableEntity
 protected:
     std::set<IObserver*> observers_;
 public:
+    /// Constructor
     ObservableEntity();
+
+    /// Virtual destructor
+    virtual ~ObservableEntity() {}
 
     /// Adds observer to this entity
     void addObserver(IObserver *observer);

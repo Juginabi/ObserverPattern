@@ -8,6 +8,8 @@ public:
 
     /// Overloaded in derived classes. Observable entity notifies Observers through this.
     virtual void onNotify() = 0;
+
+    virtual ~IObserver() {}
 };
 
 #endif // IOBSERVER_H

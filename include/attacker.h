@@ -8,7 +8,11 @@
 class Attacker : public Entity, public ObservableEntity
 {
 public:
+    /// Constructor
     Attacker(std::string name);
+
+    /// Destructor
+    ~Attacker() {}
 
     /// Notifies all observers of event
     void notifyObservers();
