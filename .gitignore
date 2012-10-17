@@ -12,6 +12,6 @@
 *.a
 
 # Qt creator compile files
-Debug-Build/
-Release-Build/
+Debug/
+Release/
 *.pro.user
