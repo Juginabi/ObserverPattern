@@ -18,7 +18,7 @@ public:
     ~Defender() {}
 
     /// Notifier method.
-    void onNotify();
+    void onNotify(Entity* observable);
 };
 
 #endif // DEFENDER_H

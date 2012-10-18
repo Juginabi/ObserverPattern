@@ -1,5 +1,4 @@
 #include <iostream>
-#include <sstream>
 #include "../include/attacker.h"
 #include "../include/defender.h"
 
@@ -10,7 +9,7 @@ int main()
     cout << "Observing entities v0.1!" << endl;
 
     Attacker spider("Spider");
-    Defender mortar("jokutorni");
+    Defender mortar("Laser-tower");
 
     spider.addObserver(&mortar);
     bool isAlive = spider.isAlive();;

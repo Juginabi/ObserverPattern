@@ -15,8 +15,8 @@ void ObservableEntity::delObserver(IObserver *observer)
     observers_.erase(observer);
 }
 
-void ObservableEntity::update()
+void ObservableEntity::update(Entity *me)
 {
     for (std::set<IObserver*>::iterator it = observers_.begin(); it != observers_.end(); ++it)
-        (*it)->onNotify();
+        (*it)->onNotify(me);
 }

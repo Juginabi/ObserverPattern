@@ -1,12 +1,12 @@
 #include "../include/defender.h"
-#include <string>
+#include "../include/entity.h"
 #include <iostream>
 
 Defender::Defender(std::string name) : Entity(name)
 {
 }
 
-void Defender::onNotify()
+void Defender::onNotify(Entity *observable)
 {
-    std::cout << this->getName() << " notified!\n";
+    std::cout << this->getName() << " notified by " << observable->getName() <<"!\n";
 }

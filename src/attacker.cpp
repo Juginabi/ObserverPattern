@@ -1,5 +1,4 @@
 #include "../include/attacker.h"
-#include <string>
 
 Attacker::Attacker(std::string name) : Entity(name)
 {
@@ -7,5 +6,5 @@ Attacker::Attacker(std::string name) : Entity(name)
 
 void Attacker::notifyObservers()
 {
-    this->update();
+    this->update(this);
 }

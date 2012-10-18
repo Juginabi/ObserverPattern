@@ -3,6 +3,7 @@
 
 #include <set>
 class IObserver;
+class Entity;
 
 class ObservableEntity
 {
@@ -13,7 +14,7 @@ protected:
     ObservableEntity();
 
     /// Updater for inheriting classes
-    virtual void update();
+    virtual void update(Entity*);
 public:
     /// Adds observer to this entity
     virtual void addObserver(IObserver *observer);
