@@ -6,20 +6,24 @@ class IObserver;
 
 class ObservableEntity
 {
-protected:
+    /// Stores all observers in set
     std::set<IObserver*> observers_;
-public:
+protected:
     /// Constructor
     ObservableEntity();
+
+    /// Updater for inheriting classes
+    virtual void update();
+public:
+    /// Adds observer to this entity
+    virtual void addObserver(IObserver *observer);
+
+    /// Removes observer from this entity
+    virtual void delObserver(IObserver *observer);
 
     /// Virtual destructor
     virtual ~ObservableEntity() {}
 
-    /// Adds observer to this entity
-    void addObserver(IObserver *observer);
-
-    /// Removes observer from this entity
-    void delObserver(IObserver *observer);
 };
 
 #endif // OBSERVABLEENTITY_H

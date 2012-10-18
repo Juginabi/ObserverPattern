@@ -9,13 +9,13 @@ private:
     bool isAlive_;
     double hitpoints_;
     std::string name_;
-public:
+protected:
     /// Default constructor
     Entity() {}
 
     /// Constructor
     Entity(std::string name);
-
+public:
     /// Virtual destructor
     virtual ~Entity() {}
 
