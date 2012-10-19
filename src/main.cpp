@@ -8,18 +8,17 @@ int main()
 {
     cout << "Observing entities v0.1!" << endl;
 
-    Attacker spider("Spider");
-    Defender mortar("Laser-tower");
+    Attacker *spider = new Attacker("Spider");
+    Defender *mortar = new Defender("Laser-tower", spider);
 
-    spider.addObserver(&mortar);
-    bool isAlive = spider.isAlive();;
+    spider->notifyObservers();
 
-    while (isAlive)
-    {
-        spider.dealDamage(1);
-        isAlive = spider.isAlive();
-        spider.notifyObservers();
-    }
+    delete spider;
+    delete mortar;
+
+
+
+
     return 0;
 }
 

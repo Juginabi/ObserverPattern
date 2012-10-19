@@ -19,3 +19,8 @@ void Entity::setName(std::string name)
 {
     name_ = name;
 }
+
+void Entity::setStatus(bool status)
+{
+    isAlive_ = status;
+}

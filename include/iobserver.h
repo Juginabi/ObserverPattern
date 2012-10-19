@@ -1,7 +1,7 @@
 #ifndef IOBSERVER_H
 #define IOBSERVER_H
 
-class Entity;
+class ObservableEntity;
 
 class IObserver
 {
@@ -12,7 +12,7 @@ public:
     virtual ~IObserver() {}
 
     /// Overloaded in derived classes. Observable entity notifies Observers through this.
-    virtual void onNotify(Entity*) = 0;
+    virtual void onNotify(ObservableEntity*) = 0;
 };
 
 #endif // IOBSERVER_H

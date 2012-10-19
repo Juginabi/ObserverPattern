@@ -14,16 +14,16 @@ protected:
     ObservableEntity();
 
     /// Updater for inheriting classes
-    virtual void update(Entity*);
+    virtual void update(ObservableEntity *);
 public:
     /// Adds observer to this entity
-    virtual void addObserver(IObserver *observer);
+    virtual void attach(IObserver *observer);
 
     /// Removes observer from this entity
-    virtual void delObserver(IObserver *observer);
+    virtual void detach(IObserver *observer);
 
     /// Virtual destructor
-    virtual ~ObservableEntity() {}
+    virtual ~ObservableEntity();
 
 };
 

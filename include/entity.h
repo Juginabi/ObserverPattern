@@ -15,6 +15,9 @@ protected:
 
     /// Constructor
     Entity(std::string name);
+
+    /// Derived classes can set status with this method
+    void setStatus(bool);
 public:
     /// Virtual destructor
     virtual ~Entity() {}

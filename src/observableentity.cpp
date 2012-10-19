@@ -5,17 +5,22 @@ ObservableEntity::ObservableEntity()
 {
 }
 
-void ObservableEntity::addObserver(IObserver *observer)
+void ObservableEntity::attach(IObserver *observer)
 {
     observers_.insert(observer);
 }
 
-void ObservableEntity::delObserver(IObserver *observer)
+void ObservableEntity::detach(IObserver *observer)
 {
     observers_.erase(observer);
 }
 
-void ObservableEntity::update(Entity *me)
+ObservableEntity::~ObservableEntity()
+{
+    observers_.clear();
+}
+
+void ObservableEntity::update(ObservableEntity *me)
 {
     for (std::set<IObserver*>::iterator it = observers_.begin(); it != observers_.end(); ++it)
         (*it)->onNotify(me);

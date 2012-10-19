@@ -1,12 +1,37 @@
 #include "../include/defender.h"
-#include "../include/entity.h"
+#include "../include/observableentity.h"
+#include "../include/attacker.h"
 #include <iostream>
 
-Defender::Defender(std::string name) : Entity(name)
+Defender::Defender(Attacker *o)
 {
+    observable_ = o;
+    o->attach(this);
 }
 
-void Defender::onNotify(Entity *observable)
+Defender::Defender(std::string name, Attacker *o) : Entity(name)
 {
-    std::cout << this->getName() << " notified by " << observable->getName() <<"!\n";
+    observable_ = o;
+    o->attach(this);
+}
+
+Defender::~Defender()
+{
+    observable_->detach(this);
+}
+
+void Defender::onNotify(ObservableEntity *observable)
+{
+    if (observable_ == observable)
+    {
+        if (static_cast<Attacker*>(observable)->isAlive())
+        {
+            std::cout << "Defender notified. Attacker status alive!\n";
+        }
+        else
+        {
+            std::cout << "Defender notified. Attacker status dead!\n";
+            observable->detach(this);
+        }
+    }
 }

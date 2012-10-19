@@ -12,7 +12,7 @@ public:
     Attacker(std::string name);
 
     /// Destructor
-    ~Attacker() {}
+    ~Attacker();
 
     /// Notifies all observers of event
     void notifyObservers();

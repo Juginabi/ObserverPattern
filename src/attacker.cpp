@@ -4,7 +4,13 @@ Attacker::Attacker(std::string name) : Entity(name)
 {
 }
 
+Attacker::~Attacker()
+{
+    setStatus(false);
+    update(this);
+}
+
 void Attacker::notifyObservers()
 {
-    this->update(this);
+    update(this);
 }
