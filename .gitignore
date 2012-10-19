@@ -15,3 +15,6 @@
 Debug/
 Release/
 *.pro.user
+Makefile.Debug 
+Makefile.Release
+gmon.out
