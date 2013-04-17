@@ -9,6 +9,9 @@ class ObservableEntity
 {
     /// Stores all observers in set
     std::set<IObserver*> observers_;
+
+    /// Observers to be removed after update
+    std::set<IObserver*> removedObservers_;
 protected:
     /// Constructor
     ObservableEntity();

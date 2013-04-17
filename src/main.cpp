@@ -16,9 +16,6 @@ int main()
     delete spider;
     delete mortar;
 
-
-
-
     return 0;
 }
 

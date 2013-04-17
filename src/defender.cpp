@@ -17,12 +17,16 @@ Defender::Defender(std::string name, Attacker *o) : Entity(name)
 
 Defender::~Defender()
 {
-    observable_->detach(this);
+    if (observable_)
+    {
+        observable_->detach(this);
+        observable_ = 0;
+    }
 }
 
 void Defender::onNotify(ObservableEntity *observable)
 {
-    if (observable_ == observable)
+    if (observable_ && observable_ == observable)
     {
         if (static_cast<Attacker*>(observable)->isAlive())
         {
@@ -31,7 +35,8 @@ void Defender::onNotify(ObservableEntity *observable)
         else
         {
             std::cout << "Defender notified. Attacker status dead!\n";
-            observable->detach(this);
+            observable_->detach(this);
+            observable_ = 0;
         }
     }
 }

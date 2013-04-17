@@ -1,5 +1,4 @@
 #include "../include/entity.h"
-#include <iostream>
 
 Entity::Entity(std::string name) :
     isAlive_(true),
