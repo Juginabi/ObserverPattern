@@ -2,10 +2,10 @@
 #define ATTACKER_H
 
 #include "entity.h"
-#include "observableentity.h"
+#include "observable.h"
 #include <string>
 
-class Attacker : public Entity, public ObservableEntity
+class Attacker : public Entity, public Observable
 {
 public:
     /// Constructor

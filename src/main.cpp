@@ -16,6 +16,8 @@ int main()
     delete spider;
     delete mortar;
 
+    cin.get();
+
     return 0;
 }
 

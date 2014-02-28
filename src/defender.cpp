@@ -1,15 +1,15 @@
 #include "../include/defender.h"
-#include "../include/observableentity.h"
+#include "../include/observable.h"
 #include "../include/attacker.h"
 #include <iostream>
 
-Defender::Defender(Attacker *o)
+Defender::Defender(Observable *o)
 {
     observable_ = o;
     o->attach(this);
 }
 
-Defender::Defender(std::string name, Attacker *o) : Entity(name)
+Defender::Defender(std::string name, Observable *o) : Entity(name)
 {
     observable_ = o;
     o->attach(this);
@@ -24,7 +24,7 @@ Defender::~Defender()
     }
 }
 
-void Defender::onNotify(ObservableEntity *observable)
+void Defender::onNotify(Observable *observable)
 {
     if (observable_ && observable_ == observable)
     {
