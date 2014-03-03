@@ -28,10 +28,21 @@ Observable::~Observable()
 
 void Observable::update(Observable *me)
 {
+    // Pre-update cleaning, because observer might have detached before update.
+    for (std::set<IObserver*>::iterator iter = removedObservers_.begin(); iter != removedObservers_.end(); ++iter)
+    {
+        std::set<IObserver*>::iterator it = observers_.find(*iter);
+        if (it != observers_.end())
+            observers_.erase(*iter);
+    }
+
+    // Notify observers
     for (std::set<IObserver*>::iterator it = observers_.begin(); it != observers_.end(); ++it)
     {
         (*it)->onNotify(me);
     }
+
+    // Post-update cleaning
     for (std::set<IObserver*>::iterator iter = removedObservers_.begin(); iter != removedObservers_.end(); ++iter)
     {
         std::set<IObserver*>::iterator it = observers_.find(*iter);
