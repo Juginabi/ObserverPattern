@@ -5,7 +5,7 @@
 #include "observable.h"
 #include <string>
 
-class Attacker : public Entity, public Observable
+class Attacker : public Entity, public Participant
 {
 public:
     /// Constructor

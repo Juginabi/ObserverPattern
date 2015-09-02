@@ -1,11 +1,11 @@
-#ifndef OBSERVABLE_H
-#define OBSERVABLE_H
+#ifndef Participant_H
+#define Participant_H
 
 #include <set>
 class IObserver;
 class Entity;
 
-class Observable
+class Participant
 {
     /// Stores all observers in set
     std::set<IObserver*> observers_;
@@ -14,10 +14,10 @@ class Observable
     std::set<IObserver*> removedObservers_;
 protected:
     /// Constructor
-    Observable();
+    Participant();
 
     /// Updater for inheriting classes
-    virtual void update(Observable *);
+    virtual void update(Participant *);
 public:
     /// Adds observer to this entity
     virtual void attach(IObserver *observer);
@@ -26,8 +26,8 @@ public:
     virtual void detach(IObserver *observer);
 
     /// Virtual destructor
-    virtual ~Observable();
+    virtual ~Participant();
 
 };
 
-#endif // OBSERVABLE_H
+#endif // Participant_H

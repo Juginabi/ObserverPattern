@@ -5,25 +5,25 @@
 #include "entity.h"
 #include <string>
 
-class Observable;
+class Participant;
 class Attacker;
 
 class Defender : public Entity, public IObserver
 {
 private:
-    Observable *observable_;
+    Participant *observable_;
 public:
     /// Default constructor
-    Defender(Observable *o);
+    Defender(Participant *o);
 
     /// Constructor with name parameter
-    Defender(std::string name, Observable *o);
+    Defender(std::string name, Participant *o);
 
     /// Destructor
     ~Defender();
 
     /// Notifier method.
-    void onNotify(Observable* observable);
+    void onNotify(Participant* observable);
 };
 
 #endif // DEFENDER_H

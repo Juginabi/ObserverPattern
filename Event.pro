@@ -12,12 +12,12 @@ SOURCES += src/main.cpp \
     src/entity.cpp \
     src/attacker.cpp \
     src/defender.cpp \
-    src/observable.cpp
+    src/Participant.cpp
 
 HEADERS += \
     include/iobserver.h \
     include/entity.h \
     include/attacker.h \
     include/defender.h \
-    include/observable.h
+    include/participant.h
 

@@ -1,32 +1,32 @@
-#include "../include/observable.h"
+#include "../include/participant.h"
 #include "../include/iobserver.h"
 
-Observable::Observable()
+Participant::Participant()
 {
 }
 
-void Observable::attach(IObserver *observer)
+void Participant::attach(IObserver *observer)
 {
     observers_.insert(observer);
 }
 
-void Observable::detach(IObserver *observer)
+void Participant::detach(IObserver *observer)
 {
     std::set<IObserver*>::iterator it = observers_.find(observer);
     if (it != observers_.end())
     {
-        // We cant remove observer here from the list, because observers_ list is currently being iterated in Observable::update method.
+        // We cant remove observer here from the list, because observers_ list is currently being iterated in Participant::update method.
         // Store this observer in to the set of to-be-removed-observers.
         removedObservers_.insert(*it);
     }
 }
 
-Observable::~Observable()
+Participant::~Participant()
 {
     observers_.clear();
 }
 
-void Observable::update(Observable *me)
+void Participant::update(Participant *me)
 {
     // Pre-update cleaning, because observer might have detached before update.
     for (std::set<IObserver*>::iterator iter = removedObservers_.begin(); iter != removedObservers_.end(); ++iter)

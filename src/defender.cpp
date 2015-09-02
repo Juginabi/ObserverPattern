@@ -3,13 +3,13 @@
 #include "../include/attacker.h"
 #include <iostream>
 
-Defender::Defender(Observable *o)
+Defender::Defender(Participant *o)
 {
     observable_ = o;
     o->attach(this);
 }
 
-Defender::Defender(std::string name, Observable *o) : Entity(name)
+Defender::Defender(std::string name, Participant *o) : Entity(name)
 {
     observable_ = o;
     o->attach(this);
@@ -24,7 +24,7 @@ Defender::~Defender()
     }
 }
 
-void Defender::onNotify(Observable *observable)
+void Defender::onNotify(Participant *observable)
 {
     if (observable_ && observable_ == observable)
     {
