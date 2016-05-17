@@ -9,12 +9,18 @@ int main()
     cout << "Observing entities v0.1!" << endl;
 
     Attacker *spider = new Attacker("Spider");
-    Defender *mortar = new Defender("Laser-tower", spider);
 
+    // Mortar tower registers spider on creation
+    Defender *mortar = new Defender("Laser-tower", spider);
+    Defender *arrow = new Defender("Arrow-tower");
+    // Arrow tower registers spider here.
+    arrow->register(spider);
+    // Notify observers
     spider->notifyObservers();
 
     delete spider;
     delete mortar;
+    delete arrow;
 
     return 0;
 }

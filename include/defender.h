@@ -13,17 +13,22 @@ class Defender : public Entity, public IObserver
 private:
     Participant *observable_;
 public:
-    /// Default constructor
+	/// Default constructor
+	Defender();
+    /// Constructor with participant
     Defender(Participant *o);
 
-    /// Constructor with name parameter
+    /// Constructor with name and participant
     Defender(std::string name, Participant *o);
 
     /// Destructor
     ~Defender();
 
-    /// Notifier method.
-    void onNotify(Participant* observable);
+    /// Notifier method which is used by participant to notify this entity.
+    void onNotify(Participant *observable);
+
+    // Register entity which we want to observe.
+    void register(Participant *o);
 };
 
 #endif // DEFENDER_H

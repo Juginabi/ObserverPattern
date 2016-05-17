@@ -40,3 +40,8 @@ void Defender::onNotify(Participant *observable)
         }
     }
 }
+
+void Defender::register(Participant *o) {
+    observable = o;
+    o->attach(this);
+}
