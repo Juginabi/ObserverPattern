@@ -2,7 +2,7 @@
 #define ATTACKER_H
 
 #include "entity.h"
-#include "observable.h"
+#include "participant.h"
 #include <string>
 
 class Attacker : public Entity, public Participant

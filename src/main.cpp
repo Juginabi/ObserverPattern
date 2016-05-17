@@ -14,7 +14,7 @@ int main()
     Defender *mortar = new Defender("Laser-tower", spider);
     Defender *arrow = new Defender("Arrow-tower");
     // Arrow tower registers spider here.
-    arrow->register(spider);
+    arrow->registerParticipant(spider);
     // Notify observers
     spider->notifyObservers();
 

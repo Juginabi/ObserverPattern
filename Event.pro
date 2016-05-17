@@ -12,7 +12,7 @@ SOURCES += src/main.cpp \
     src/entity.cpp \
     src/attacker.cpp \
     src/defender.cpp \
-    src/Participant.cpp
+    src/participant.cpp
 
 HEADERS += \
     include/iobserver.h \

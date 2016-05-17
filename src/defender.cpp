@@ -1,7 +1,12 @@
 #include "../include/defender.h"
-#include "../include/observable.h"
+#include "../include/participant.h"
 #include "../include/attacker.h"
 #include <iostream>
+
+Defender::Defender(std::string name) : Entity(name) {
+
+}
+
 
 Defender::Defender(Participant *o)
 {
@@ -41,7 +46,7 @@ void Defender::onNotify(Participant *observable)
     }
 }
 
-void Defender::register(Participant *o) {
-    observable = o;
+void Defender::registerParticipant(Participant *o) {
+    observable_ = o;
     o->attach(this);
 }
